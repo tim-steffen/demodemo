@@ -21,7 +21,15 @@ public class AaController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Access-Control-Allow-Origin", "*");
 
-        String t =  "{\"elements\":[\"First Name\", \"Last Name\", \"Address\", \"Age\", \"Sex\"]}";
+//        String t =  "{\"elements\":[\"First Name\",\"<br/>\", \"Last Name\",\"<br/>\",\"Month\", \"Day\", \"Year\",\"<br/>\", \"Sex\"]}";
+        String t =  "{\"elements\":[" +
+                "[\"FirstName\", \"90px\"]," +
+                "[\"LastName\",\"90px\"]," +
+                "[\"<br/>\"], " +
+                "[\"Month\",\"30px\"]," +
+                "[\"Day\",\"30px\"]," +
+                "[\"Year\",\"30px\"]" +
+                "]}";
         return new ResponseEntity<String>(t,headers, HttpStatus.OK);
 
     }
